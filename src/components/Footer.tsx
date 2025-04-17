@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -39,7 +39,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white text-xl transition-colors"
             >
-              <FaTwitter />
+              <FaInstagram />
             </a>
           </div>
         </div>
