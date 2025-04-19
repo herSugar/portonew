@@ -37,7 +37,7 @@ export default function Hero() {
           Hi, I'm <span className="text-blue-400">I Made Restu Jaya Putra</span>
         </h1>
         <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
-          Frontend Developer specializing in React and TypeScript
+        Hai, saya Restu — web developer dan mahasiswa Informatika yang antusias membangun antarmuka menarik dan fungsional. Selamat datang di portofolio saya!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

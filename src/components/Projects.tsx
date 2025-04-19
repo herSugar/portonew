@@ -16,10 +16,10 @@ interface Project {
         image: "/images/projects/JW.png"
       },
       {
-        title: "Portfolio Website",
-        description: "Modern portfolio with animations and dark mode",
-        tags: ["Next.js", "Tailwind", "Framer Motion"],
-        link: "#",
+        title: "FurQon-shop",
+        description: "Modern Shop Web with cart",
+        tags: ["PHP", "CSS", "Bootstrap", "Mysql"],
+        link: "https://github.com/herSugar/furqon-shop.git",
       },
     ];
   

@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ export default function Footer() {
 
           <div className="flex space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/herSugar"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white text-xl transition-colors"
@@ -26,7 +26,7 @@ export default function Footer() {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/restu-jaya-113667360"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white text-xl transition-colors"
@@ -34,12 +34,20 @@ export default function Footer() {
               <FaLinkedin />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.instagram.com/gr1mriper?igsh=cndhM2pndGtoYmtu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white text-xl transition-colors"
             >
               <FaInstagram />
+            </a>
+            <a
+              href="https://www.youtube.com/@gerip69"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white text-xl transition-colors"
+            >
+              <FaYoutube />
             </a>
           </div>
         </div>
