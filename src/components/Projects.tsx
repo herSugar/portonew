@@ -22,10 +22,10 @@ interface Project {
         link: "https://github.com/herSugar/furqon-shop.git",
       },
       {
-        title: "Toko-kacamata",
+        title: "Frontend-Toko",
         description: "Website Optik for costumer to buy glasses",
         tags: ["PHP", "CSS", "Bootstrap", "Mysql"],
-        link: "https://github.com/herSugar/furqon-shop.git",
+        link: "https://github.com/herSugar/frontend-toko.git",
       },
     ];
   
