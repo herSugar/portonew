@@ -21,6 +21,12 @@ interface Project {
         tags: ["PHP", "CSS", "Bootstrap", "Mysql"],
         link: "https://github.com/herSugar/furqon-shop.git",
       },
+      {
+        title: "Toko-kacamata",
+        description: "Website Optik for costumer to buy glasses",
+        tags: ["PHP", "CSS", "Bootstrap", "Mysql"],
+        link: "https://github.com/herSugar/furqon-shop.git",
+      },
     ];
   
     return (
