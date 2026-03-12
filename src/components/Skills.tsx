@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiTypescript, SiTailwindcss, SiWordpress } from "react-icons/si";
 import { SiLaravel, SiPhp, SiMysql } from "react-icons/si";
 
 const skills = [
@@ -10,7 +10,8 @@ const skills = [
   { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
   { name: "Laravel", icon: <SiLaravel className="text-red-500" /> },
   { name: "CodeIgniter", icon: <SiPhp className="text-purple-500" /> }, // CodeIgniter tidak punya icon khusus, pakai PHP
-  { name: "MySQL", icon: <SiMysql className="text-blue-500" /> }
+  { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
+  { name: "Wordpress", icon: <SiWordpress className="text-blue-500" /> }
 ];
 
 export default function Skills() {
