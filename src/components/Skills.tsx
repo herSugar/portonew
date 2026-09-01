@@ -14,23 +14,68 @@ const skills = [
   { name: "Wordpress", icon: <SiWordpress className="text-blue-500" /> }
 ];
 
+const softSkills = ["Task & Time Management", "Team Work"];
+
+const languages = [
+  { name: "Indonesian", level: "Native" },
+  { name: "English", level: "Intermediate" },
+];
+
+const achievements = [
+  { title: "3rd Place in ECO English Quiz", year: "2023" },
+];
+
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-          My <span className="text-blue-400">Skills</span>
-        </h2>
+    <div>
+      <h2 className="text-3xl font-bold text-white mb-2">Skills</h2>
+      <p className="text-gray-400 mb-12">Tools and technologies I work with.</p>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          {skills.map((skill, index) => (
-            <div key={index} className="flex items-center gap-3 px-4 py-2 bg-gray-700 rounded-full">
-              <span className="text-2xl">{skill.icon}</span>
-              <span className="text-white">{skill.name}</span>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-wrap gap-3">
+        {skills.map((skill, index) => (
+          <div key={index} className="flex items-center gap-3 px-4 py-2 bg-gray-800 rounded-full">
+            <span className="text-2xl">{skill.icon}</span>
+            <span className="text-white">{skill.name}</span>
+          </div>
+        ))}
       </div>
-    </section>
+
+      {/* Soft Skills */}
+      <h3 className="text-xl font-bold text-white mt-12 mb-4">Soft Skills</h3>
+      <div className="flex flex-wrap gap-3">
+        {softSkills.map((skill) => (
+          <span
+            key={skill}
+            className="px-4 py-2 bg-gray-800 rounded-full text-white"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      {/* Languages */}
+      <h3 className="text-xl font-bold text-white mt-12 mb-4">Languages</h3>
+      <div className="flex flex-wrap gap-3">
+        {languages.map((lang) => (
+          <div key={lang.name} className="px-4 py-2 bg-gray-800 rounded-full">
+            <span className="text-white">{lang.name}</span>
+            <span className="text-gray-400 text-sm"> — {lang.level}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Achievements */}
+      <h3 className="text-xl font-bold text-white mt-12 mb-4">Achievements</h3>
+      <ul className="space-y-2">
+        {achievements.map((item) => (
+          <li key={item.title} className="flex items-start gap-2 text-gray-300">
+            <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 shrink-0" />
+            <span>
+              {item.title} <span className="text-gray-500">({item.year})</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

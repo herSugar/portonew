@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 interface Project {
   title: string;
@@ -15,21 +15,21 @@ export default function Projects() {
       description: "News and information platform for Indonesia",
       tags: ["Web", "News", "Company Profile", "Wordpress"],
       link: "https://fixindonesia.co.id",
-      image: "/images/projects/FixIndonesia.png",
+      image: "/images/projects/FixIndonesia.webp",
     },
     {
       title: "Checkloc",
       description: "Location checking and verification platform",
       tags: ["Web", "Location", "Company Profile", "Wordpress", "Property Listing"],
       link: "https://checkloc.id",
-      image: "/images/projects/Checkloc.png",
+      image: "/images/projects/Checkloc.webp",
     },
     {
       title: "Jendela Wisata",
       description: "Full-featured Vacation Web with cart and payment integration",
       tags: ["CodeIgniter", "Tailwind", "MySQL"],
       link: "https://pariwisata.lab-trpl.id/",
-      image: "/images/projects/JW.png",
+      image: "/images/projects/JW.webp",
     },
     {
       title: "FurQon-shop",
@@ -50,7 +50,7 @@ export default function Projects() {
   const [direction, setDirection] = useState<"left" | "right">("right");
 
   const total = projects.length;
-  const visibleCount = 3;
+  const visibleCount = 2;
 
   const goTo = (dir: "left" | "right") => {
     if (animating) return;
@@ -68,29 +68,26 @@ export default function Projects() {
     Array.from({ length: visibleCount }, (_, i) => projects[(current + i) % total]);
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 overflow-hidden">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-          My <span className="text-blue-400">Projects</span>
-        </h2>
-        <p className="text-gray-400 text-center mb-12">
-          {current + 1} / {total} — scroll to explore
-        </p>
+    <div>
+      {/* Header */}
+      <h2 className="text-3xl font-bold text-white mb-2">Projects</h2>
+      <p className="text-gray-400 mb-12">
+        {current + 1} / {total} — things I've built
+      </p>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative px-10">
           {/* Left Button */}
           <button
             onClick={() => goTo("left")}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors duration-200"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors duration-200"
           >
             ‹
           </button>
 
           {/* Cards */}
           <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
             style={{
               opacity: animating ? 0 : 1,
               transform: animating
@@ -105,11 +102,15 @@ export default function Projects() {
                 className="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 group shadow-xl"
               >
                 {/* Thumbnail */}
-                <div className="h-48 bg-gray-700 flex items-center justify-center">
+                <div className="aspect-video bg-gray-700 flex items-center justify-center">
                   {project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
+                      width={800}
+                      height={450}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   ) : (
@@ -152,7 +153,7 @@ export default function Projects() {
           {/* Right Button */}
           <button
             onClick={() => goTo("right")}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors duration-200"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 hover:bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-colors duration-200"
           >
             ›
           </button>
@@ -177,7 +178,6 @@ export default function Projects() {
             />
           ))}
         </div>
-      </div>
-    </section>
+    </div>
   );
 }
