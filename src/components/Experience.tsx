@@ -42,7 +42,7 @@ export default function Experience() {
 
       <div className="space-y-6">
         {experiences.map((exp) => (
-          <div key={exp.company} className="bg-gray-800 rounded-xl p-6 shadow-lg">
+          <div key={exp.company} className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-700/50">
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
               <h3 className="text-lg font-bold text-white">
                 {exp.company}{" "}

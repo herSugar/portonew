@@ -6,13 +6,28 @@ interface Project {
   tags: string[];
   image?: string;
   link: string;
+  useIframe?: boolean;
 }
 
 export default function Projects() {
   const projects: Project[] = [
     {
+      title: "7ani Travel",
+      description: "Travel booking platform",
+      tags: ["Web", "Travel", "Booking", "NextJS", "Supabase", "Tailwind"],
+      link: "https://7ani-travel.vercel.app/",
+      useIframe: true,
+    },
+    {
+      title: "StyleMeUp Shop",
+      description: "eCommerce Web for StyleMeUp Shop with cart",
+      tags: ["Web", "E-Commerce", "Shop", "NextJS", "Supabase", "Tailwind"],
+      link: "https://stylemeup-shop.vercel.app/",
+      useIframe: true,
+    },
+    {
       title: "Fix Indonesia",
-      description: "News and information platform for Indonesia",
+      description: "News and information platform for Fix Indonesia Event Planner",
       tags: ["Web", "News", "Company Profile", "Wordpress"],
       link: "https://fixindonesia.co.id",
       image: "/images/projects/FixIndonesia.webp",
@@ -99,11 +114,23 @@ export default function Projects() {
             {getVisible().map((project, index) => (
               <div
                 key={`${project.title}-${index}`}
-                className="bg-gray-800 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 group shadow-xl"
+                className="bg-gray-800/60 backdrop-blur-sm rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 group shadow-xl border border-gray-700/50"
               >
                 {/* Thumbnail */}
-                <div className="aspect-video bg-gray-700 flex items-center justify-center">
-                  {project.image ? (
+                <div className="aspect-video bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                  {project.useIframe ? (
+                    <div className="absolute inset-0 w-full h-full overflow-hidden">
+                      {/* Transparent overlay to prevent interaction swallowing */}
+                      <div className="absolute inset-0 z-10 bg-black/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none" />
+                      <iframe
+                        src={project.link}
+                        title={project.title}
+                        className="w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                      />
+                    </div>
+                  ) : project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}

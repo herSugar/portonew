@@ -33,7 +33,7 @@ export default function Skills() {
 
       <div className="flex flex-wrap gap-3">
         {skills.map((skill, index) => (
-          <div key={index} className="flex items-center gap-3 px-4 py-2 bg-gray-800 rounded-full">
+          <div key={index} className="flex items-center gap-3 px-4 py-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-full">
             <span className="text-2xl">{skill.icon}</span>
             <span className="text-white">{skill.name}</span>
           </div>
@@ -46,7 +46,7 @@ export default function Skills() {
         {softSkills.map((skill) => (
           <span
             key={skill}
-            className="px-4 py-2 bg-gray-800 rounded-full text-white"
+            className="px-4 py-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-full text-white"
           >
             {skill}
           </span>
@@ -57,7 +57,7 @@ export default function Skills() {
       <h3 className="text-xl font-bold text-white mt-12 mb-4">Languages</h3>
       <div className="flex flex-wrap gap-3">
         {languages.map((lang) => (
-          <div key={lang.name} className="px-4 py-2 bg-gray-800 rounded-full">
+          <div key={lang.name} className="px-4 py-2 bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 rounded-full">
             <span className="text-white">{lang.name}</span>
             <span className="text-gray-400 text-sm"> — {lang.level}</span>
           </div>
